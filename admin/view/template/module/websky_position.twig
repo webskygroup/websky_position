@@ -1,0 +1,75 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="float-end">
+        <button type="submit" form="form-module" data-bs-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa-solid fa-save"></i></button>
+        <a href="{{ back }}" data-bs-toggle="tooltip" title="{{ button_back }}" class="btn btn-light"><i class="fa-solid fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ol class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+          <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header"><i class="fa-solid fa-pencil"></i> {{ text_edit }}</div>
+      <div class="card-body">
+        <form id="form-module" action="{{ save }}" method="post" data-oc-toggle="ajax">
+           <ul class="nav nav-tabs">
+            <li class="nav-item"><a href="#tab-setting" data-bs-toggle="tab" class="nav-link active">{{ tab_setting }}</a></li>
+             <li class="nav-item"><a href="#tab-support" data-bs-toggle="tab" class="nav-link">{{tab_support}}</a></li>
+          </ul>
+ <div class="tab-content">		  	  
+<div class="tab-pane active" id="tab-setting">
+
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <div class="form-check form-switch form-switch-lg">
+                <input type="hidden" name="module_websky_position_status" value="0"/>
+                <input type="checkbox" name="module_websky_position_status" value="1" id="input-status" class="form-check-input"{% if module_websky_position_status %} checked{% endif %}/>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+<div class="tab-pane" id="tab-support">
+   
+   <div class="row">
+             <div class="col-lg-6 col-md-6 col-sm-6 mb-3"><div class="tile tile-primary">
+            <div class="tile-heading">  support ticket  <span class="float-end">
+                  </span></div>
+            <div class="tile-body"><i class="fa-solid fa-users"></i>
+              <h6 class="float-end" style="width: 80%;">you can request any type of opencart store task as create new module and theme or upgade to opencart 4 and ...</h6>
+            </div>
+            <div class="tile-footer"><a href="https://my.opencart-ir.com/">click to register send ticket...</a></div>
+          </div>
+          </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 mb-3"><div class="tile tile-primary">
+            <div class="tile-heading"> other extension  <span class="float-end">
+                  </span>
+            </div>
+            <div class="tile-body"><i class="fa-solid fa-credit-card"></i>
+              <h6 class="float-end">more than 20 extension</h6>
+            </div>
+            <div class="tile-footer"><a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=webskygroup"> opencart extensions...</a></div>
+          </div>
+          </div>
+
+
+
+
+</div>
+
+          </div>
+</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{ footer }}
